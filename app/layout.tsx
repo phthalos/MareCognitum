@@ -16,20 +16,20 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
-    { name: "게임", href: "gaming", current: true },
-    { name: "일상", href: "journey", current: false },
-    { name: "공략집", href: "strategy", current: false },
-    { name: "기술정보", href: "tech", current: false },
+    { name: "게임", href: "/gaming", current: true },
+    { name: "일상", href: "/journey", current: false },
+    { name: "공략집", href: "/strategy", current: false },
+    { name: "기술정보", href: "/tech", current: false },
 ];
 
 const pretendardLight = localFont({
     src: "/fonts/Pretendard-Light.woff",
-    variable: "--font-geist-sans",
+    variable: "--font-pretendard-light",
     weight: "100 900",
 });
 const pretendardRegular = localFont({
     src: "/fonts/Pretendard-Regular.woff",
-    variable: "--font-geist-mono",
+    variable: "--font-pretendard-regular",
     weight: "100 900",
 });
 
@@ -44,12 +44,14 @@ function classNames(...classes) {
 
 export default function RootLayout({
     children,
+    intro,
 }: Readonly<{
     children: React.ReactNode;
+    intro: React.ReactNode;
 }>) {
     return (
         <html className="h-full bg-gray-100">
-            <body className="h-full">
+            <body className={`${pretendardLight.variable} h-full`}>
                 <div className="min-h-full">
                     <Disclosure as="nav" className=" border-b border-b-white">
                         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -65,7 +67,7 @@ export default function RootLayout({
                                             />
                                         </Link>
                                     </div>
-                                    <div className="hidden sm:block">
+                                    <div className="hidden sm:block ">
                                         <div className="ml-9 flex items-baseline space-x-6">
                                             {navigation.map((item) => (
                                                 <a
@@ -83,11 +85,11 @@ export default function RootLayout({
                                         </div>
                                     </div>
                                 </div>
-                                <div className="hidden md:block">
+                                <div className={` ${pretendardRegular.variable} hidden md:block`}>
                                     <span className="ml-2">
                                         <button
                                             type="button"
-                                            className="inline-flex items-center rounded-md px-4 py-2 text-sm font-semibold text-888 shadow-sm  hover:text-white"
+                                            className="inline-flex items-center rounded-md px-4 py-2 text-sm text-888  hover:text-white"
                                         >
                                             로그인
                                         </button>
@@ -95,7 +97,7 @@ export default function RootLayout({
                                     <span className="ml-2">
                                         <button
                                             type="button"
-                                            className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-black"
+                                            className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm text-black"
                                         >
                                             회원가입
                                         </button>
@@ -140,9 +142,7 @@ export default function RootLayout({
                             </div>
                         </DisclosurePanel>
                     </Disclosure>
-                    <main>
-                        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{children}</div>
-                    </main>
+                    <main>{children}</main>
                 </div>
             </body>
         </html>
