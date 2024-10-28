@@ -6,7 +6,7 @@ function classNames(...classes) {
 }
 
 const menu = [
-    { name: "들어가기", href: "#", current: true },
+    { name: "들어가기", href: "#", current: false },
     { name: "이웃집 배너", href: "#", current: false },
     { name: "로그인", href: "#", current: false },
     { name: "회원가입", href: "#", current: false },

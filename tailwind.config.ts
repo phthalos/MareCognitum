@@ -21,6 +21,7 @@ const config: Config = {
         fontFamily: {
             regular: ["PretendardRegular", "sans-serif"],
             mono: ["SF Mono"],
+            semibold: ["Pretendard Semibold", "sans-serif"],
         },
     },
     plugins: [],

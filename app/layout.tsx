@@ -14,9 +14,10 @@ import {
 import { Bars3Icon, BellIcon, CheckIcon, LinkIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 const navigation = [
-    { name: "게임", href: "/gaming", current: true },
+    { name: "게임", href: "/gaming", current: false },
     { name: "일상", href: "/journey", current: false },
     { name: "공략집", href: "/strategy", current: false },
     { name: "기술정보", href: "/tech", current: false },
@@ -25,11 +26,6 @@ const navigation = [
 const pretendardLight = localFont({
     src: "/fonts/Pretendard-Light.woff",
     variable: "--font-pretendard-light",
-    weight: "100 900",
-});
-const pretendardRegular = localFont({
-    src: "/fonts/Pretendard-Regular.woff",
-    variable: "--font-pretendard-regular",
     weight: "100 900",
 });
 
@@ -44,7 +40,6 @@ function classNames(...classes) {
 
 export default function RootLayout({
     children,
-    intro,
 }: Readonly<{
     children: React.ReactNode;
     intro: React.ReactNode;
@@ -131,11 +126,7 @@ export default function RootLayout({
                     </DisclosurePanel>
                 </Disclosure>
                 <main>{children}</main>
-                <div className="flex justify-center">
-                    <p className="font-mono text-888 text-xs font-thin absolute bottom-12">
-                        Copyright © 2024 Cerublaz. All Rights Reserved.
-                    </p>
-                </div>
+                <Footer />
             </body>
         </html>
     );
