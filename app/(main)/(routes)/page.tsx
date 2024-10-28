@@ -14,12 +14,18 @@ const menu = [
 
 export default function Home() {
     return (
-        <div className="flex h-screen items-center">
+        <div className="flex h-screen w-screen items-center fixed">
             <div className="flex flex-col text-center m-auto">
-                <div className="mb-6">
-                    <Image alt="Mare Cognitum" src={logoKR} width={362} height={undefined} />
+                <div className="mb-6 flex">
+                    <Image
+                        className="drop-shadow-glow"
+                        alt="Mare Cognitum"
+                        src={logoKR}
+                        width={362}
+                        height={undefined}
+                    />
                 </div>
-                <p className="mb-48">느긋하게 굴러가는 게이머의 개인 홈페이지</p>
+                <p className="mb-48 font-regular">느긋하게 굴러가는 게이머의 개인 홈페이지</p>
                 <div className="flex flex-col">
                     {menu.map((item) => (
                         <a
@@ -27,11 +33,15 @@ export default function Home() {
                             href={item.href}
                             aria-current={item.current ? "page" : undefined}
                             className={`${classNames(
-                                item.current ? "text-white" : "text-888 hover:text-white hover:text",
+                                item.current
+                                    ? "text-white drop-shadow-glow group-first:block"
+                                    : "text-888 hover:text-white hover:drop-shadow-glow",
                                 "font-medium"
-                            )}text-lg mb-8`}
+                            )}text-lg leading-none mb-8 flex justify-center group`}
                         >
-                            {item.name}
+                            <p className="hidden group-hover:block text-xs">◆</p>
+                            <p className="mx-12 block">{item.name}</p>
+                            <p className="hidden group-hover:block text-xs">◆</p>
                         </a>
                     ))}
                 </div>

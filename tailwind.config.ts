@@ -14,6 +14,13 @@ const config: Config = {
                 "888": "#888888",
                 "333": "#333333",
             },
+            dropShadow: {
+                glow: "0 0 5px rgba(255, 255, 255, 0.5)",
+            },
+        },
+        fontFamily: {
+            regular: ["PretendardRegular", "sans-serif"],
+            mono: ["SF Mono"],
         },
     },
     plugins: [],

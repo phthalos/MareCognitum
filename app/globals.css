@@ -17,5 +17,26 @@
 body {
     color: var(--foreground);
     background: var(--background);
-    font-family: var(--font-pretendard-light, --font-pretendard-regular), Arial, Helvetica, sans-serif;
+    font-family: var(--font-pretendard-light), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+    @font-face {
+        font-family: "PretendardRegular";
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/Pretendard-Regular.wotf) format("wotf");
+    }
+    @font-face {
+        font-family: "PretendardSemibold";
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/Pretendard-Semibold.wotf) format("wotf");
+    }
+    /* @font-face {
+        font-family: "SF Mono";
+        font-style: normal;
+        font-weight: 100;
+        src: url(/fonts/SFMonoLight.otf) format("otf");
+    } */
 }

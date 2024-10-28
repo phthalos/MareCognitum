@@ -50,99 +50,91 @@ export default function RootLayout({
     intro: React.ReactNode;
 }>) {
     return (
-        <html className="h-full bg-gray-100">
-            <body className={`${pretendardLight.variable} h-full`}>
-                <div className="min-h-full">
-                    <Disclosure as="nav" className=" border-b border-b-white">
-                        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                            <div className="flex h-16 items-center justify-between">
-                                <div className="flex items-center">
-                                    <div className="flex-shrink-0">
-                                        <Link href="/">
-                                            <Image
-                                                alt="Mare Cognitum"
-                                                src={logoKR}
-                                                width={undefined}
-                                                height={undefined}
-                                            />
-                                        </Link>
-                                    </div>
-                                    <div className="hidden sm:block ">
-                                        <div className="ml-9 flex items-baseline space-x-6">
-                                            {navigation.map((item) => (
-                                                <a
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    aria-current={item.current ? "page" : undefined}
-                                                    className={classNames(
-                                                        item.current ? " text-white" : "text-888 hover:text-white",
-                                                        "text-sm font-medium"
-                                                    )}
-                                                >
-                                                    {item.name}
-                                                </a>
-                                            ))}
-                                        </div>
+        <html>
+            <body className={`${pretendardLight.variable}`}>
+                <Disclosure as="nav" className=" border-b border-b-white">
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div className="flex h-16 items-center justify-between">
+                            <div className="flex items-center">
+                                <div className="flex-shrink-0">
+                                    <Link href="/">
+                                        <Image alt="Mare Cognitum" src={logoKR} width={undefined} height={undefined} />
+                                    </Link>
+                                </div>
+                                <div className="hidden sm:block ">
+                                    <div className="ml-9 flex items-baseline space-x-6">
+                                        {navigation.map((item) => (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                aria-current={item.current ? "page" : undefined}
+                                                className={classNames(
+                                                    item.current ? " text-white" : "text-888 hover:text-white",
+                                                    "text-sm font-medium"
+                                                )}
+                                            >
+                                                {item.name}
+                                            </a>
+                                        ))}
                                     </div>
                                 </div>
-                                <div className={` ${pretendardRegular.variable} hidden md:block`}>
-                                    <span className="ml-2">
-                                        <button
-                                            type="button"
-                                            className="inline-flex items-center rounded-md px-4 py-2 text-sm text-888  hover:text-white"
-                                        >
-                                            로그인
-                                        </button>
-                                    </span>
-                                    <span className="ml-2">
-                                        <button
-                                            type="button"
-                                            className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm text-black"
-                                        >
-                                            회원가입
-                                        </button>
-                                    </span>
-                                </div>
-                                <div className="-mr-2 flex md:hidden">
-                                    {/* Mobile menu button */}
-                                    <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                        <span className="absolute -inset-0.5" />
-                                        <span className="sr-only">Open main menu</span>
-                                        <Bars3Icon
-                                            aria-hidden="true"
-                                            className="block h-6 w-6 group-data-[open]:hidden"
-                                        />
-                                        <XMarkIcon
-                                            aria-hidden="true"
-                                            className="hidden h-6 w-6 group-data-[open]:block"
-                                        />
-                                    </DisclosureButton>
-                                </div>
+                            </div>
+                            <div className="hidden md:block font-regular">
+                                <span className="ml-2">
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center rounded-md px-4 py-2 text-sm text-888  hover:text-white"
+                                    >
+                                        로그인
+                                    </button>
+                                </span>
+                                <span className="ml-2">
+                                    <button
+                                        type="button"
+                                        className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm text-black"
+                                    >
+                                        회원가입
+                                    </button>
+                                </span>
+                            </div>
+                            <div className="-mr-2 flex md:hidden">
+                                {/* Mobile menu button */}
+                                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                    <span className="absolute -inset-0.5" />
+                                    <span className="sr-only">Open main menu</span>
+                                    <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
+                                    <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
+                                </DisclosureButton>
                             </div>
                         </div>
+                    </div>
 
-                        <DisclosurePanel className="md:hidden">
-                            <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                                {navigation.map((item) => (
-                                    <DisclosureButton
-                                        key={item.name}
-                                        as="a"
-                                        href={item.href}
-                                        aria-current={item.current ? "page" : undefined}
-                                        className={classNames(
-                                            item.current
-                                                ? "bg-gray-900 text-white"
-                                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                            "block rounded-md px-3 py-2 text-base font-medium"
-                                        )}
-                                    >
-                                        {item.name}
-                                    </DisclosureButton>
-                                ))}
-                            </div>
-                        </DisclosurePanel>
-                    </Disclosure>
-                    <main>{children}</main>
+                    <DisclosurePanel className="md:hidden">
+                        <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                            {navigation.map((item) => (
+                                <DisclosureButton
+                                    key={item.name}
+                                    as="a"
+                                    href={item.href}
+                                    aria-current={item.current ? "page" : undefined}
+                                    className={classNames(
+                                        item.current
+                                            ? "bg-gray-900 text-white"
+                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                        "block rounded-md px-3 py-2 text-base font-medium"
+                                    )}
+                                >
+                                    {item.name}
+                                </DisclosureButton>
+                            ))}
+                        </div>
+                    </DisclosurePanel>
+                </Disclosure>
+                <main>{children}</main>
+                <div className="flex justify-center">
+                    <p className="font-mono text-888 text-xs font-thin absolute bottom-12">
+                        Copyright © 2024 Cerublaz. All Rights Reserved.
+                    </p>
                 </div>
             </body>
         </html>
