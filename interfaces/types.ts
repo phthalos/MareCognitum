@@ -4,3 +4,10 @@ export type Children = {
 export type Content = {
     content: string;
 };
+export type AlertType = {
+    buttonName: string;
+    dialogTitle: string;
+    content: string;
+    confirmBtnName: string;
+    className: string;
+};
