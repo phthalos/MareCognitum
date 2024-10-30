@@ -10,7 +10,7 @@ export default function GamingLayout({
     const allPosts = getAllPosts();
 
     return (
-        <div className="flex flex-row justify-center mt-9 mx-auto max-w-7xl px-8">
+        <div className="flex flex-row justify-center pt-28 mx-auto max-w-7xl px-8">
             <PostCategory posts={allPosts} />
             {children}
             <PostOnThisPage />

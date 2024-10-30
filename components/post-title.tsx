@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
+import { Children } from "@/interfaces/types";
 
-type Props = {
-    children?: ReactNode;
-};
-
-export function PostTitle({ children }: Props) {
+export function PostTitle({ children }: Children) {
     return <h1 className="text-4xl font-semibold">{children}</h1>;
 }
