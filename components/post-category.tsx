@@ -12,15 +12,16 @@ type Props = {
 
 const PostCategory = ({ posts }: Props) => {
     const pathname = usePathname();
-    console.log(posts);
+
     return (
-        <ul className="hidden md:flex flex-col lg:w-64 w-56">
+        // 카테고리, 포스토 개수 증가로 스크롤 생기면 ul의 top-28 부분 조정
+        <ul className="h-full sticky top-28 hidden md:flex flex-col lg:w-64 w-56">
             {games.map((game) => (
-                <Disclosure key={game.name}>
-                    <DisclosureButton className="mb-4">
+                <Disclosure key={game.name} defaultOpen={true}>
+                    <DisclosureButton className="mb-4 group" onClick={close}>
                         <li className="text-888 hover:text-white text-sm font-regular leading-none flex justify-between mb-4">
                             {game.name}
-                            <ChevronRightIcon className="w-3" />
+                            <ChevronRightIcon className="w-3 group-data-[open]:rotate-90" />
                         </li>
                         {posts.map((post) =>
                             game.name == post.subcategory ? (

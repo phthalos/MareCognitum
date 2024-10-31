@@ -11,3 +11,13 @@ export type AlertType = {
     confirmBtnName: string;
     className: string;
 };
+export type Slugs = {
+    params: {
+        slug: string;
+    };
+};
+export type PostShift = {
+    idx: number | undefined;
+    title: string | undefined;
+    href: string | undefined;
+};
