@@ -4,7 +4,7 @@ import { Children } from "@/interfaces/types";
 // 스크롤이 필요한 페이지가 생기면 fixed를 따로 빼고 재사용해보자
 const TitleContainer = ({ children }: Children) => {
     return (
-        <div className="flex h-screen w-screen items-center">
+        <div className="flex lg:h-screen w-screen items-center lg:p-0 pb-28">
             <div className="text-center m-auto">{children}</div>
         </div>
     );
