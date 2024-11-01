@@ -21,3 +21,10 @@ export type PostShift = {
     title: string | undefined;
     href: string | undefined;
 };
+export interface GuestBookTypes {
+    id: string;
+    post: string;
+    userId: string;
+    username: string;
+    createdAt: number;
+}

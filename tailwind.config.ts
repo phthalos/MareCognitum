@@ -16,6 +16,7 @@ const config: Config = {
             },
             dropShadow: {
                 glow: "0 0 5px rgba(255, 255, 255, 0.5)",
+                glowsm: "0 0 1.5px rgba(255, 255, 255, 0.7)",
             },
         },
         fontFamily: {
