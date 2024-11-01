@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <TitleContainer>
             <Image
-                className="drop-shadow-glow mb-6 flex"
+                className="sticky -z-10 drop-shadow-glow mb-6 flex"
                 alt="Mare Cognitum"
                 src={logoKR}
                 width={362}
