@@ -18,7 +18,7 @@ const PostCategory = ({ posts }: Props) => {
         <ul className="h-full sticky top-28 hidden md:flex flex-col lg:w-64 w-56">
             {games.map((game) => (
                 <Disclosure key={game.name} defaultOpen={true}>
-                    <DisclosureButton className="mb-4 group" onClick={close}>
+                    <DisclosureButton className="mb-4 group">
                         <li className="text-888 hover:text-white text-sm font-regular leading-none flex justify-between mb-4">
                             {game.name}
                             <ChevronRightIcon className="w-3 group-data-[open]:rotate-90" />

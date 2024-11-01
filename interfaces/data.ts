@@ -2,7 +2,7 @@ export const navigation = [
     { name: "게임", href: "/gaming", current: false },
     { name: "일상", href: "/journey", current: false },
     { name: "공략집", href: "/strategy", current: false },
-    { name: "기술정보", href: "/tech", current: false },
+    { name: "방명록", href: "/guestbook", current: false },
 ];
 
 export const menu = [
